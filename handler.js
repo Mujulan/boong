@@ -20,6 +20,7 @@ const { performance } = require('perf_hooks')
 const { Primbon } = require('scrape-primbon')
 const primbon = new Primbon()
 const { smsg, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom, getGroupAdmins } = require('./lib/myfunc')
+const apikeynya = "BetaBotz" 
 
 // read database
 let tebaklagu = db.data.game.tebaklagu = []
@@ -2310,49 +2311,201 @@ break
                 }
             }
             break
-	        case 'tiktok': case 'tiktoknowm': {
+	        case 'multicolor': {
+			if (!text) throw 'Teks? '
+                m.reply(mess.wait)
+			let anu = await fetchJson(`https://betabotz-api.herokuapp.com/api/textpro/multi-color?text=${text}&apikey=${apikeynya}`) 
+let buttonMessage = {
+image: { url: anu.result },
+caption: ` Done`,
+footer: kagura.user.name,
+headerType: 4
+}
+kagura.sendMessage(m.chat, buttonMessage, { quoted: m })
+}
+break
+case 'bokep': {
+			if (!text) throw 'Teks? '
+                m.reply(mess.wait)
+			let anu = await fetchJson(`https://betabotz-api.herokuapp.com/api/search/xnxx?query=${text}&apikey=${apikeynya}`) 
+let buttonMessage = {
+caption: ` nama : ${anu.result.title}\n info : ${anu.result.info}\n link : ${anu.result.link}`,
+footer: kagura.user.name,
+headerType: 4
+}
+kagura.sendMessage(m.chat, buttonMessage, { quoted: m })
+}
+break
+case 'magma': {
+			if (!text) throw 'Teks? '
+                m.reply(mess.wait)
+			let anu = await fetchJson(`https://betabotz-api.herokuapp.com/api/textpro/magma?text=${text}&apikey=${apikeynya}`) 
+let buttonMessage = {
+image: { url: anu.result },
+caption: ` Done`,
+footer: kagura.user.name,
+headerType: 4
+}
+kagura.sendMessage(m.chat, buttonMessage, { quoted: m })
+}
+break
+case 'ninjalogo': {
+			if (!args[0]) throw `Example : ${prefix + command} Naruto Bot`
+              if (!args[1]) throw `Example : ${prefix + command} Naruto Bot`
+                m.reply(mess.wait)
+			let anu = await fetchJson(`https://betabotz-api.herokuapp.com/api/textpro/ninja-logo?text=${args[0]}&text2=${args[1]}&apikey=${apikeynya}`) 
+let buttonMessage = {
+image: { url: anu.result },
+caption: ` Done`,
+footer: kagura.user.name,
+headerType: 4
+}
+kagura.sendMessage(m.chat, buttonMessage, { quoted: m })
+}
+break
+	case 'zettai': {
+let buttonMessage = {
+image: { url: 'https://betabotz-api.herokuapp.com/api/nsfw/zettai?apikey=BetaBotz' },
+caption: ` Random ${command}`,
+footer: kagura.user.name,
+headerType: 4
+}
+kagura.sendMessage(m.chat, buttonMessage, { quoted: m })
+}
+break
+case 'nezuko': {
+let buttonMessage = {
+image: { url: 'https://betabotz-api.herokuapp.com/api/wallpaper/nezuko?apikey=BetaBotz' },
+caption: ` Random ${command}`,
+footer: kagura.user.name,
+headerType: 4
+}
+kagura.sendMessage(m.chat, buttonMessage, { quoted: m })
+}
+break
+case 'onepiece': {
+let buttonMessage = {
+image: { url: 'https://betabotz-api.herokuapp.com/api/wallpaper/onepiece?apikey=BetaBotz' },
+caption: ` Random ${command}`,
+footer: kagura.user.name,
+headerType: 4
+}
+kagura.sendMessage(m.chat, buttonMessage, { quoted: m })
+}
+break
+case 'cewemalaysia': {
+let buttonMessage = {
+image: { url: 'https://betabotz-api.herokuapp.com/api/cecan/malaysia?apikey=BetaBotz' },
+caption: ` Random ${command}`,
+footer: kagura.user.name,
+headerType: 4
+}
+kagura.sendMessage(m.chat, buttonMessage, { quoted: m })
+}
+break
+case 'cewejepang': {
+let buttonMessage = {
+image: { url: 'https://betabotz-api.herokuapp.com/api/cecan/japan?apikey=BetaBotz' },
+caption: ` Random ${command}`,
+footer: kagura.user.name,
+headerType: 4
+}
+kagura.sendMessage(m.chat, buttonMessage, { quoted: m })
+}
+break
+case 'cewekorea': {
+let buttonMessage = {
+image: { url: 'https://betabotz-api.herokuapp.com/api/cecan/korea?apikey=BetaBotz' },
+caption: ` Random ${command}`,
+footer: kagura.user.name,
+headerType: 4
+}
+kagura.sendMessage(m.chat, buttonMessage, { quoted: m })
+}
+break
+case 'ceweindo': {
+let buttonMessage = {
+image: { url: 'https://betabotz-api.herokuapp.com/api/cecan/indonesia?apikey=BetaBotz' },
+caption: ` Random ${command}`,
+footer: kagura.user.name,
+headerType: 4
+}
+kagura.sendMessage(m.chat, buttonMessage, { quoted: m })
+}
+break
+case 'cewethailand': {
+let buttonMessage = {
+image: { url: 'https://betabotz-api.herokuapp.com/api/cecan/thailand?apikey=BetaBotz' },
+caption: ` Random ${command}`,
+footer: kagura.user.name,
+headerType: 4
+}
+kagura.sendMessage(m.chat, buttonMessage, { quoted: m })
+}
+break
+case 'cewevietnam': {
+let buttonMessage = {
+image: { url: 'https://betabotz-api.herokuapp.com/api/cecan/vietnam?apikey=BetaBotz' },
+caption: ` Random ${command}`,
+footer: kagura.user.name,
+headerType: 4
+}
+kagura.sendMessage(m.chat, buttonMessage, { quoted: m })
+}
+break
+case 'cewechina': {
+let buttonMessage = {
+image: { url: 'https://betabotz-api.herokuapp.com/api/cecan/china?apikey=BetaBotz' },
+caption: ` Random ${command}`,
+footer: kagura.user.name,
+headerType: 4
+}
+kagura.sendMessage(m.chat, buttonMessage, { quoted: m })
+}
+break
+case 'tiktok': case 'tiktoknowm': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
-                let buttons = [
+                let anu = await fetchJson(`https://betabotz-api.herokuapp.com/api/download/tiktok?url=${text}&apikey=${apikeynya}`) 
+                let buttons = [                   
                     {buttonId: `tiktokwm ${text}`, buttonText: {displayText: '► With Watermark'}, type: 1},
                     {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1}
                 ]
                 let buttonMessage = {
                     video: { url: anu.result.nowatermark },
-                    caption: `Download From ${text}`,
+                    caption: `⭔ Url : ${text}`,
                     footer: 'Press The Button Below',
                     buttons: buttons,
                     headerType: 5
                 }
                 kagura.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
-            break
-            case 'tiktokwm': case 'tiktokwatermark': {
+            break            
+            case 'tiktokwm': case 'tiktokwm': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
-                let buttons = [
-                    {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '► No Watermark'}, type: 1},
+                let anu = await fetchJson(`https://betabotz-api.herokuapp.com/api/download/tiktok?url=${text}&apikey=${apikeynya}`) 
+                let buttons = [                   
+                    {buttonId: `tiktokwm ${text}`, buttonText: {displayText: '► With Watermark'}, type: 1},
                     {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1}
                 ]
                 let buttonMessage = {
                     video: { url: anu.result.watermark },
-                    caption: `Download From ${text}`,
+                    caption: `⭔ Url : ${text}`,
                     footer: 'Press The Button Below',
                     buttons: buttons,
                     headerType: 5
                 }
                 kagura.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
-            break
+            break            
             case 'tiktokmp3': case 'tiktokaudio': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/downloader/musically', { url: text }, 'apikey'))
-                let buttons = [
-                    {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '► No Watermark'}, type: 1},
-                    {buttonId: `tiktokwm ${text}`, buttonText: {displayText: '► With Watermark'}, type: 1}
+                let anu = await fetchJson(`https://betabotz-api.herokuapp.com/api/download/tiktok?url=${text}&apikey=${apikeynya}`) 
+                let buttons = [                   
+                    {buttonId: `tiktokwm ${text}`, buttonText: {displayText: '► With Watermark'}, type: 1},
+                    {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1}
                 ]
                 let buttonMessage = {
                     text: `Download From ${text}`,
@@ -2360,10 +2513,64 @@ break
                     buttons: buttons,
                     headerType: 2
                 }
-                let msg = await kagura.sendMessage(m.chat, buttonMessage, { quoted: m })
-                kagura.sendMessage(m.chat, { audio: { url: anu.result.audio }, mimetype: 'audio/mpeg'}, { quoted: msg })
-            }
-            break
+let msg = await kagura.sendMessage(m.chat, buttonMessage, { quoted: m })
+kagura.sendMessage(m.chat, { audio: { url: anu.result.audio }, mimetype: 'audio/mpeg'}, { quoted: msg })
+}
+break
+case 'tiktok1': case 'tiktoknowm1': {
+if (!text) throw 'Masukkan Query Link!'
+reply(mess.wait)
+let anu = await fetchJson(api('betabotz', '/download/tiktok?', { url: text }, 'apikey'))
+let buttons = [
+{buttonId: `tiktokwm ${text}`, buttonText: {displayText: '► With Watermark'}, type: 1},
+{buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1}
+]
+let buttonMessage = {
+video: { url: anu.result.nowatermark },
+caption: `Download From ${text}`,
+footer: 'Press The Button Below',
+buttons: buttons,
+headerType: 5
+}
+kagura.sendMessage(m.chat, buttonMessage, { quoted: m })
+}
+break
+case 'tiktokwm1': case 'tiktokwatermark1': {
+if (!text) throw 'Masukkan Query Link!'
+reply(mess.wait)
+let anu = await fetchJson(api('betabotz', '/downloader/tiktok', { url: text }, 'apikey'))
+let buttons = [
+{buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '► No Watermark'}, type: 1},
+{buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1}
+]
+let buttonMessage = {
+video: { url: anu.result.watermark },
+caption: `Download From ${text}`,
+footer: 'Press The Button Below',
+buttons: buttons,
+headerType: 5
+}
+kagura.sendMessage(m.chat, buttonMessage, { quoted: m })
+}
+break
+case 'tiktokmp31': case 'tiktokaudio1': {
+if (!text) throw 'Masukkan Query Link!'
+reply(mess.wait)
+let anu = await fetchJson(api('betabotz', '/downloader/musically', { url: text }, 'apikey'))
+let buttons = [
+{buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '► No Watermark'}, type: 1},
+{buttonId: `tiktokwm ${text}`, buttonText: {displayText: '► With Watermark'}, type: 1}
+]
+let buttonMessage = {
+text: `Download From ${text}`,
+footer: 'Press The Button Below',
+buttons: buttons,
+headerType: 2
+}
+let msg = await kagura.sendMessage(m.chat, buttonMessage, { quoted: m })
+kagura.sendMessage(m.chat, { audio: { url: anu.result.audio }, mimetype: 'audio/mpeg'}, { quoted: msg })
+}
+break
 	        case 'instagram': case 'ig': case 'igdl': {
                 if (!text) throw 'No Query Url!'
                 m.reply(mess.wait)

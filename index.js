@@ -148,9 +148,9 @@ async function startkagura() {
                 }
 
                 if (anu.action == 'add') {
-                    kagura.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `Welcome To ${metadata.subject} @${num.split("@")[0]}` })
+                    kagura.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `Selamat Datang Di Grup ${metadata.subject} @${num.split("@")[0]} \n\nJangan Lupa Intronya\nTerima Kasih` })
                 } else if (anu.action == 'remove') {
-                    kagura.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `@${num.split("@")[0]} Leaving To ${metadata.subject}` })
+                    kagura.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `Anjay @${num.split("@")[0]} Udah Keluar Dari Grup ${metadata.subject}` })
                 }
             }
         } catch (err) {
